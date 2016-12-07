@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,74 +24,54 @@ public class MainActivity extends AppCompatActivity {
     Button btnNext;
     @BindView(R.id.tvDescription)
     TextView tvDescription;
-    //ChipFactory chipFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        //chipFactory = new ChipFactory();
-        //SingleChipFactoryObject.getInstance();
-
     }
 
     @OnClick({R.id.btnLaysSaltedSpecial, R.id.btnLaysOnionCheese, R.id.btnLaysIndianMasala})
     public void pickFlavour(View view) {
         switch (view.getId()) {
-
             case R.id.btnLaysIndianMasala:
-                btnLaysIndianMasala.setEnabled(false);
-                btnLaysOnionCheese.setEnabled(false);
-                btnLaysSaltedSpecial.setEnabled(false);
-                Chips laysIndianMasala = SingleChipFactoryObject.getInstance().getChipType("INDIANMASALA");
-                if (laysIndianMasala != null) {
-                    String choice = laysIndianMasala.makeChips();
-                    tvDescription.setText(choice);
-                } else {
-                    Log.e(TAG, "No Chip Selected");
-                    tvDescription.setText("No Chip Selected");
-                }
-
+                displayChipType(ChipFactory.MASALA);
                 break;
             case R.id.btnLaysOnionCheese:
-                btnLaysIndianMasala.setEnabled(false);
-                btnLaysOnionCheese.setEnabled(false);
-                btnLaysSaltedSpecial.setEnabled(false);
-                Chips laysOnionCheese = SingleChipFactoryObject.getInstance().getChipType("ONIONANDCHEESE");
-                if (laysOnionCheese != null) {
-                    String choice = laysOnionCheese.makeChips();
-                    tvDescription.setText(choice);
-                } else {
-                    Log.e(TAG, "No Chip Selected");
-                    tvDescription.setText("No Chip Selected");
-                }
+                displayChipType(ChipFactory.ONION);
                 break;
             case R.id.btnLaysSaltedSpecial:
-                btnLaysIndianMasala.setEnabled(false);
-                btnLaysOnionCheese.setEnabled(false);
-                btnLaysSaltedSpecial.setEnabled(false);
-                Chips laysSaltedSpecial = SingleChipFactoryObject.getInstance().getChipType("SALTEDSPECIAL");
-                if (laysSaltedSpecial != null) {
-                    String choice = laysSaltedSpecial.makeChips();
-                    tvDescription.setText(choice);
-                } else {
-                    Log.e(TAG, "No Chip Selected");
-                    tvDescription.setText("No Chip Selected");
-                }
+                displayChipType(ChipFactory.SALTED);
                 break;
             default:
         }
-
-
+        disableButtons();
     }
+
+    private void displayChipType(String chipType) {
+        Chips laysSaltedSpecial = SingleChipFactory.getInstance().getChipType(chipType);
+        if (laysSaltedSpecial != null) {
+            String choice = laysSaltedSpecial.makeChips();
+            tvDescription.setText(choice);
+        } else {
+            Log.e(TAG, "No Chip Selected");
+            tvDescription.setText("No Chip Selected");
+        }
+    }
+
+    /**
+     *
+     */
+    private void disableButtons() {
+        btnLaysIndianMasala.setEnabled(false);
+        btnLaysOnionCheese.setEnabled(false);
+        btnLaysSaltedSpecial.setEnabled(false);
+    }
+
     @OnClick(R.id.btnNext)
-    public void naviagteToCustomizeActivity()
-    {
-        //Toast.makeText(MainActivity.this,"Still Coming",Toast.LENGTH_LONG).show();
-        Intent intent= new Intent(MainActivity.this,CustomziedActivity.class);
+    public void navigateToCustomizeActivity() {
+        Intent intent = new Intent(MainActivity.this, CustomziedActivity.class);
         startActivity(intent);
-
     }
-
 }

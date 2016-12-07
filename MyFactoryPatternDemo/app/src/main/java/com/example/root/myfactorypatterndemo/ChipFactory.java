@@ -1,24 +1,23 @@
 package com.example.root.myfactorypatterndemo;
 
-/**
- * Created by root on 6/12/16.
- */
-
 public class ChipFactory {
-    public Chips getChipType(String chipType) {
-        if (chipType == null) {
-            return null;
-        }
-        if (chipType.equalsIgnoreCase("SALTEDSPECIAL")) {
-            return new LaysSaltedSpecial();
-        }
-        if (chipType.equalsIgnoreCase("INDIANMASALA")) {
-            return new LaysIndianMasala();
-        }
-        if (chipType.equalsIgnoreCase("ONIONANDCHEESE")) {
-            return new LaysOnionAndChesse();
-        }
-        return null;
+    public static final String SALTED = "SALTEDSPECIAL";
+    public static final String MASALA = "INDIANMASALA";
+    public static final String ONION = "ONIONANDCHEESE";
 
+    /**
+     *
+     * @param chipType
+     * @return
+     */
+    public Chips getChipType(String chipType) {
+        switch (chipType) {
+            case SALTED:
+                return new LaysSaltedSpecial();
+            case MASALA:
+                return new LaysIndianMasala();
+            default:
+                return new LaysOnionAndChesse();
+        }
     }
 }
