@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_customzied"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.root.myfactorypatterndemo.CustomziedActivity">
+
+    <TextView
+        android:id="@+id/tvSauce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="Select Sauce"
+
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:weightSum="1"
+        android:id="@+id/sauceRadioGroup"
+        android:layout_marginTop="32dp">
+
+
+    <RadioButton
+        android:id="@+id/rbRedSauce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvSauce"
+        android:layout_marginTop="16dp"
+        android:text="Red Sauce"
+        android:layout_weight="0.5" />
+
+
+    <RadioButton
+        android:id="@+id/rbWhiteSauce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tvSauce"
+        android:layout_marginTop="16dp"
+        android:text="White Sauce"
+
+        android:layout_weight="0.5" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvPepper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/sauceRadioGroup"
+        android:layout_marginTop="35dp"
+        android:text="Select Pepper"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/tvPepper"
+        android:weightSum="1"
+        android:id="@+id/pepperRadioGroup">
+
+
+
+    <RadioButton
+        android:text="Red Pepper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPepper"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/rbRedPepper"
+        android:layout_weight="0.5"/>
+
+    <RadioButton
+        android:text="Black Pepper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvPepper"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="32dp"
+        android:id="@+id/rbBlackPepper"
+        android:layout_weight="0.5"/>
+    </RadioGroup>
+
+
+    <TextView
+        android:text="Mayonaise Not Available"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/pepperRadioGroup"
+        android:layout_marginTop="68dp"
+        android:id="@+id/tvMayonaise"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textAlignment="center"/>
+
+    <Button
+        android:text="Order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvMayonaise"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:id="@+id/btnOrderBuild" />
+
+
+
+
+</RelativeLayout>
