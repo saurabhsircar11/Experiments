@@ -1,8 +1,11 @@
-package com.example.root.myfactorypatterndemo;
+package com.example.root.myfactorypatterndemo.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.RadioGroup;
+
+import com.example.root.myfactorypatterndemo.models.ProductModel;
+import com.example.root.myfactorypatterndemo.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +44,7 @@ public class CustomziedActivity extends AppCompatActivity {
             default:
 
         }
-        Product product = new Product.ProductBuilder().setInnerPepper(pepperChoice).setInnerSauce(sauceChoice).createProduct();
+        ProductModel product = new ProductModel.ProductBuilder().setInnerPepper(pepperChoice).setInnerSauce(sauceChoice).createProduct();
     }
 
 

@@ -1,10 +1,9 @@
 package com.example.root.myfactorypatterndemo;
 
-/**
- * Created by root on 6/12/16.
- */
-
 public class SingleChipFactoryObject {
+    public static final String MASALA = "masala";
+    public static final String ONION = "onion";
+    public static final String SALTED = "saled";
     private static ChipFactory chipFactory;
     private static SingleChipFactoryObject instance;
 
@@ -13,14 +12,9 @@ public class SingleChipFactoryObject {
     }
 
     public static ChipFactory getInstance() {
-        if (instance != null) {
-            return chipFactory;
-        } else {
+        if (instance == null) {
             instance = new SingleChipFactoryObject();
-            return chipFactory;
-
         }
+        return chipFactory;
     }
-
-
 }

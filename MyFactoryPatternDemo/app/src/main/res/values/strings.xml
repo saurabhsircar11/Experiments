@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MyFactoryPatternDemo</string>
+    <string name="btn_lays_indian_masala">Lays Indian Masala</string>
 </resources>

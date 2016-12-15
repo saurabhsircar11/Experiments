@@ -1,4 +1,4 @@
-package com.example.root.myfactorypatterndemo;
+package com.example.root.myfactorypatterndemo.models;
 
 import android.util.Log;
 
@@ -6,13 +6,13 @@ import android.util.Log;
  * Created by root on 6/12/16.
  */
 
-public class Product {
+public class ProductModel {
     String sauce;
     String pepper;
     String mayonaise;
 
 
-    public Product(String sauce, String pepper, String mayonaise) {
+    public ProductModel(String sauce, String pepper, String mayonaise) {
         this.sauce = sauce;
         this.pepper = pepper;
         this.mayonaise = mayonaise;
@@ -57,9 +57,9 @@ public class Product {
         public String getInnerMayonaise() {
             return this.innerMayonaise;
         }
-        public Product createProduct()
+        public ProductModel createProduct()
         {
-            return  new Product(innerSauce,innerPepper,innerMayonaise);
+            return  new ProductModel(innerSauce,innerPepper,innerMayonaise);
         }
 
     }

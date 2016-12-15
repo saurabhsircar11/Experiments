@@ -1,4 +1,4 @@
-package com.example.root.myfactorypatterndemo;
+package com.example.root.myfactorypatterndemo.interfaces;
 
 /**
  * Created by root on 6/12/16.
