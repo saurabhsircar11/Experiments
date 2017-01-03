@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.tvFormattedDate)
     TextView tvFormattedDate;
     DateTimeConverter dateTimeConverter;
-    String millisText;
+    //String millisText;
     long millis;
 
     @OnClick(R.id.btnConvert)
@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         dateTimeConverter = new DateTimeConverter();
         millis = System.currentTimeMillis();
-        millisText = String.valueOf(millis);
-        tvTimestamp.setText(millisText);
+        tvTimestamp.setText(String.valueOf(millis));
     }
 }
