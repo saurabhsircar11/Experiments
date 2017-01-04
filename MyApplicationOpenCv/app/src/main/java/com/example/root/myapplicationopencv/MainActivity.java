@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
                 }
                 default: {
                     super.onManagerConnected(status);
+                    //this is second commmit mesage
+
                     break;
                 }
 
